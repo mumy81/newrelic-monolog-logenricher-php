@@ -16,11 +16,8 @@
 namespace NewRelic\Monolog\Enricher;
 
 use Monolog\Formatter\FormatterInterface;
-use Monolog\Handler\AbstractProcessingHandler;
-use Monolog\Handler\Curl;
-use Monolog\Handler\HandlerInterface;
 use Monolog\Logger;
-use Monolog\Util;
+use NewRelic\Monolog\Enricher\AbstractHandler;
 
 if (Logger::API == 1) {
     class Handler extends AbstractHandler

@@ -66,7 +66,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
         . '"context":' . (Logger::API == 1 ? '[]' : '{}') . ','
         . '"level":300,"level_name":"WARNING","channel":"test",'
         . '"extra":' . (Logger::API == 1 ? '[]' : '{}') . ','
-        . '"datetime":' . json_encode($record['datetime']) . ',';
+        . '"datetime":' . json_encode(\date_format($record['datetime'], "Y-m-d\TH:i:sP")) . ',';
 
         if (isset($record['extra']['newrelic-context'])) {
             $expected = $expected . '"hostname":"example.host",'
